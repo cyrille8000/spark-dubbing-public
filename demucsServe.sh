@@ -6,8 +6,9 @@ BASE_URL="https://files.dubbingspark.com/b0e526cc7578d1e1986ae652f06fd499e22360f
 
 CURRENT_USER=$(whoami)
 
-# Le dossier mvsep est inclus dans le repo
-cd mvsep/
+# Cloner le repo spark-dubbing-public
+git clone https://github.com/cyrille8000/spark-dubbing-public.git
+cd spark-dubbing-public/mvsep/
 
 echo "Creating necessary directories..."
 mkdir -p ./models ./results
@@ -110,7 +111,7 @@ if ! echo "$SUPPORTED_VERSIONS" | grep -qw "$PYTHON_VERSION"; then
     rm -rf Python-3.10.14 Python-3.10.14.tgz
 
     # Retourner au dossier mvsep
-    cd /workspace/mvsep 2>/dev/null || cd ~/mvsep 2>/dev/null || cd mvsep
+    cd /workspace/spark-dubbing-public/mvsep 2>/dev/null || cd ~/spark-dubbing-public/mvsep 2>/dev/null || cd spark-dubbing-public/mvsep
 
     # Mettre à jour la version
     PYTHON_VERSION="310"
